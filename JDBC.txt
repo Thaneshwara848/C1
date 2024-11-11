@@ -1,0 +1,183 @@
+1 ) What is JDBC, and why is it used in Java?
+
+Answer:
+ JDBC (Java Database Connectivity) is a Java API that enables Java applications to interact with databases. 
+It provides a way to connect to a database, execute SQL queries, and retrieve or manipulate data.
+
+2 ) Explain the main components of JDBC.
+
+Answer: 
+	JDBC has four main components:
+		DriverManager: Manages a list of database drivers.
+		Connection: Establishes a session with the database.
+		Statement: Executes SQL queries.
+		ResultSet: Holds data retrieved from a database query.
+
+3 ) What are the different types of JDBC drivers?
+
+Answer: There are four types of JDBC drivers:
+	Type-1: JDBC-ODBC Bridge Driver
+	Type-2: Native-API Driver
+	Type-3: Network Protocol Driver
+	Type-4: Thin Driver (Pure Java)
+
+4) Explain the steps for establishing a JDBC connection.
+
+Answer: 
+	Steps to establish a JDBC connection:
+
+		Load the driver class.
+		Use DriverManager.getConnection to establish the connection.
+		Create a statement object.
+		Execute queries using the statement object.	
+		Close the connection.
+
+5) How do you load a JDBC driver?
+
+Answer: 
+	By using Class.forName("driver_class_name");. For example:
+
+		Class.forName("com.mysql.cj.jdbc.Driver");
+
+6) What is a PreparedStatement, and how is it different from a Statement?
+
+Answer: 
+	A PreparedStatement is a precompiled SQL statement that can be executed multiple times with different parameters,
+	making it more efficient and secure against SQL injection compared to a Statement.
+
+7) How does JDBC handle transactions?
+
+Answer: 
+	JDBC provides transaction management by setting autoCommit to false, using Connection methods like commit() to commit 
+	changes, and rollback() to revert changes in case of errors.
+
+8) What is ResultSet in JDBC, and what are its types?
+
+Answer: ResultSet is an interface that holds the data retrieved by a query. Types include:
+	TYPE_FORWARD_ONLY: Default, moves forward only.
+	TYPE_SCROLL_INSENSITIVE: Can scroll both ways, but data is not dynamic.
+	TYPE_SCROLL_SENSITIVE: Can scroll both ways and reflects database changes.
+
+9)What is batch processing in JDBC, and how do you implement it?
+
+Answer:
+	 Batch processing allows executing multiple SQL commands in a single database call, improving performance. 
+	It’s implemented using addBatch() and executeBatch() methods in Statement or PreparedStatement.
+
+10)Explain the role of the DriverManager class.
+
+Answer: 
+	DriverManager is used to manage a list of database drivers and establish a connection with a database by selecting the appropriate driver.
+
+11 )How can you retrieve metadata from a database in JDBC?
+
+Answer:
+	 You can retrieve metadata using DatabaseMetaData and ResultSetMetaData. DatabaseMetaData provides information about the database, while ResultSetMetaData provides information about the result set’s columns.
+
+
+12 )How can you handle exceptions in JDBC?
+
+Answer:
+	 Exceptions are handled using try-catch blocks, typically around SQLException. Detailed error information can be retrieved using methods like getErrorCode() and getSQLState().
+
+13 ) What are the major JDBC methods in the Statement interface?
+
+Answer:
+	 Major methods include executeQuery(), executeUpdate(), execute(), and addBatch().
+
+14 ) What is the difference between execute(), executeQuery(), and executeUpdate()?
+
+Answer:
+	executeQuery(): Executes a SELECT query and returns a ResultSet.
+	executeUpdate(): Executes INSERT, UPDATE, DELETE commands and returns the count of rows affected.
+	execute(): Used when the query could return multiple results or a boolean (for complex statements).
+
+15 ) How do you set up a JDBC connection pool?
+
+Answer:
+	 A JDBC connection pool can be set up using libraries like Apache DBCP, HikariCP, or by configuring DataSource in an application server to reuse connections for efficiency.
+
+
+16 ) What is DataSource, and how is it different from DriverManager?
+
+Answer:
+	 DataSource is an alternative to DriverManager for database connection management. It provides a pooled connection setup, which is more efficient and recommended for high-performance applications.
+
+17 ) What are Savepoints, and how do they work in JDBC transactions?
+
+Answer: 
+	Savepoints allow a transaction to be partially rolled back to a specific point. They’re created using setSavepoint() and rolled back using rollback(Savepoint savepoint).
+
+
+18 ) How do you close JDBC resources properly, and why is it important?
+
+Answer:
+	 Always close ResultSet, Statement, and Connection objects in a finally block or use try-with-resources. This prevents resource leaks and ensures connections are returned to the pool.
+
+19 ) Write a program to Insert the record , 
+	ID , NAME , AGe , Salary , Designation
+
+20 ) BUild a Project 
+	
+	1 ) insert
+	2 ) Fetch 
+	3 ) DeleteById 
+	4 ) Update
+	5) DeleteALL
+	6) FetchById
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SQL :
+
+	DDL  : data def lang 
+				dr Cat : Drop , Rename , Create , Alter , Truncate
+
+	DML : Data manup lang 
+			UID : update , Delete , Insert 
+
+	DRL  : Data Reticval lang 
+			Select 
+
+	TCL : tranz cont lang
+		Commit , rollback, Save point 
+
+	DCL : Data control lang 
+		Grant  , revoke 
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
